@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChepiaogoumaiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChepiaogoumaiEntity" id="chepiaogoumaiMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="piaowuleixing" column="piaowuleixing"/>
+        <result property="goumaishijian" column="goumaishijian"/>
+        <result property="piaojia" column="piaojia"/>
+        <result property="dingdanbeizhu" column="dingdanbeizhu"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChepiaogoumaiVO" >
+		SELECT * FROM chepiaogoumai  chepiaogoumai         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChepiaogoumaiVO" >
+		SELECT  chepiaogoumai.* FROM chepiaogoumai  chepiaogoumai
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChepiaogoumaiView" >
+
+		SELECT  chepiaogoumai.* FROM chepiaogoumai  chepiaogoumai 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChepiaogoumaiView" >
+		SELECT * FROM chepiaogoumai  chepiaogoumai <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
